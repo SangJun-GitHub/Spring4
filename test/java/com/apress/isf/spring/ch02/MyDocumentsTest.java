@@ -1,5 +1,6 @@
+package com.apress.isf.spring.ch02;
+
 import com.apress.isf.spring.ch02.Document;
-import com.apress.isf.spring.ch02.MySearchEngine;
 import com.apress.isf.spring.ch02.SearchEngine;
 import com.apress.isf.spring.ch02.Type;
 import org.junit.Before;
@@ -24,7 +25,7 @@ public class MyDocumentsTest {
 
     @Before
     public void setup(){
-        context = new ClassPathXmlApplicationContext("META-INF/mydocuments-context.xml");
+        context = new ClassPathXmlApplicationContext("META-INF/mydocuments-context-ch02.xml");
         engine = context.getBean(SearchEngine.class);
         documentType = context.getBean(Type.class);
     }
