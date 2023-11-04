@@ -2,6 +2,7 @@ package com.apress.isf.spring.ch03;
 
 import com.apress.isf.spring.ch02.Document;
 import com.apress.isf.spring.ch02.Type;
+import com.apress.isf.spring.ch03.DocumentDAO;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.List;
  */
 
 @Repository("documentDAO")
-public class AnnotatedDocumentRepository implements DocumentDAO{
+public class AnnotatedDocumentRepository implements DocumentDAO {
 
     @Override
     public Document[] getAll() {

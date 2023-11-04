@@ -3,6 +3,7 @@ package com.apress.isf.spring.ch03;
 import com.apress.isf.spring.ch02.Document;
 import com.apress.isf.spring.ch02.SearchEngine;
 import com.apress.isf.spring.ch02.Type;
+import com.apress.isf.spring.ch03.DocumentDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
