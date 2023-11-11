@@ -9,5 +9,5 @@ import com.apress.isf.spring.ch02.Type;
 
 public interface TypeDataDAO {
     public Type[] getAll();
-    public Type[] findById(String id);
+    public Type findById(String id);
 }
