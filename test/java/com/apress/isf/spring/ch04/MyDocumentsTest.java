@@ -22,7 +22,7 @@ public class MyDocumentsTest {
 
     @Before
     public void setup(){
-        context = new ClassPathXmlApplicationContext("META-INF/mydocuments-context-ch03.xml");
+        context = new ClassPathXmlApplicationContext("META-INF/ch04/mydocuments-context-ch04.xml");
     }
     @Test
     public void testAll(){

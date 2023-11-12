@@ -25,7 +25,7 @@ public class MyDocumentsBeanDefinitionReaderTest {
 
         @Before
         public void setup(){
-            context = new GenericGroovyApplicationContext("META-INF/mydocuments-ch04.groovy");
+            context = new GenericGroovyApplicationContext("META-INF/ch04/mydocuments-ch04.groovy");
             engine = context.getBean(SearchEngine.class);
             webType = context.getBean("webType",Type.class);
         }

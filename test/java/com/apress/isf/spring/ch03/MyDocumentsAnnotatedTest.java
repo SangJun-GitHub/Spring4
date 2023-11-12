@@ -25,7 +25,7 @@ public class MyDocumentsAnnotatedTest {
 
     @Before
     public void setup(){
-        context = new ClassPathXmlApplicationContext("META-INF/mydocuments-annotations-context-ch03.xml");
+        context = new ClassPathXmlApplicationContext("META-INF/ch03/mydocuments-annotations-context-ch03.xml");
         engine = context.getBean(SearchEngine.class);
         webType = context.getBean(Type.class);
     }

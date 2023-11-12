@@ -23,7 +23,7 @@ public class MyDocumentsTest {
 
     @Before
     public void setUp(){
-        context = new ClassPathXmlApplicationContext("META-INF/mydocuments-context-ch03.xml");
+        context = new ClassPathXmlApplicationContext("META-INF/ch03/mydocuments-context-ch03.xml");
         engine = context.getBean(SearchEngine.class);
         webType = context.getBean("webType", Type.class);
     }
