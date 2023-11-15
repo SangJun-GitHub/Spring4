@@ -4,6 +4,26 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
+    <!-- AOP -->
+    <bean id="beforeLogging" class="com.apress.isf.spring.ch08.BeforeLoggingModule"/>
+    <bean id="afterLogging" class="com.apress.isf.spring.ch08.AfterLoggingModule"/>
+    <bean id="aroundLogging" class="com.apress.isf.spring.ch08.AroundLoggingModule"/>
+    <bean id="throwsLogging" class="com.apress.isf.spring.ch08.ThrowsLoggingModule"/>
+
+    <!-- AOP Proxy-->
+    <bean id="engineProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyTargetClass" value="true"/>
+        <property name="target" ref="engine"/>
+        <property name="interceptorNames">
+            <list>
+                <value>beforeLogging</value>
+                <value>afterLogging</value>
+                <value>aroundLogging</value>
+                <value>throwsLogging</value>
+            </list>
+        </property>
+    </bean>
+
     <bean id="engine" class="com.apress.isf.spring.ch08.SearchEngineService">
         <property name="documentDAO" ref="documentDAO" />
     </bean>
