@@ -1,6 +1,4 @@
-package com.apress.isf.spring.ch09;
-
-import com.apress.isf.spring.ch09.Type;
+package com.apress.isf.spring.ch09.model;
 
 import java.util.Date;
 
