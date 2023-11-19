@@ -1,4 +1,6 @@
-package com.apress.isf.spring.ch09;
+package com.apress.isf.spring.ch09.model;
+
+import com.apress.isf.spring.ch09.model.Document;
 
 import java.util.ArrayList;
 import java.util.List;

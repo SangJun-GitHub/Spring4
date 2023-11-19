@@ -1,4 +1,4 @@
-package com.apress.isf.spring.ch09;
+package com.apress.isf.spring.ch09.model;
 
 /**
  * Created by Sang Jun Park on 11/16/2023.
