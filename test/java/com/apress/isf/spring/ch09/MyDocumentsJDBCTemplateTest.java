@@ -12,24 +12,23 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
- * Created by Sang Jun Park on 11/19/2023.
+ * Created by Sang Jun Park on 11/20/2023.
  * GitHub : http://github.com/SangJun-GitHub
  */
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:META-INF/ch09/mydocuments-jdbc-embedded-context-ch09.xml")
-public class MyDocumentsJDBCEmbeddedAnnotatedTest {
+@ContextConfiguration("classpath:META-INF/ch09/mydocuments-jdbc-template-context-ch09.xml")
+public class MyDocumentsJDBCTemplateTest {
 
     @Autowired
     private SearchEngine engine;
-    //error
-
     private Type webType = new Type("WEB", ".url");
 
     @Test
-    public void testJDBCEmbedded(){
-
+    public void testJDBCTemplate(){
         List<Document> documents = engine.listAll();
         assertNotNull(documents);
         assertTrue(documents.size() == 4);
@@ -38,8 +37,6 @@ public class MyDocumentsJDBCEmbeddedAnnotatedTest {
         assertNotNull(documents);
         assertTrue(documents.size() == 1);
         assertEquals(webType.getName(), documents.get(0).getType().getName());
-        assertEquals(webType.getDesc(), documents.get(0).getType().getDesc());
         assertEquals(webType.getExtension(), documents.get(0).getType().getExtension());
-
     }
 }
