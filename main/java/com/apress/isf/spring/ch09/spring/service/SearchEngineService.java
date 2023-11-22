@@ -4,6 +4,8 @@ import com.apress.isf.spring.ch09.model.Document;
 import com.apress.isf.spring.ch09.model.Type;
 import com.apress.isf.spring.ch09.service.SearchEngine;
 import com.apress.isf.spring.ch09.spring.data.DocumentDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +14,9 @@ import java.util.List;
  * Created by Sang Jun Park on 11/18/2023.
  * GitHub : http://github.com/SangJun-GitHub
  */
-
+@Component
 public class SearchEngineService implements SearchEngine {
+    @Autowired
     private DocumentDAO documentDAO;
 
     public SearchEngineService(){}
