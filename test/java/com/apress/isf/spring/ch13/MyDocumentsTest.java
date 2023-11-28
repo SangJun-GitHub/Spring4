@@ -28,6 +28,11 @@ public class MyDocumentsTest {
     EmailService email;
 
     @Test
+    public void testScheduler() throws InterruptedException{
+        Thread.sleep(45000);
+    }
+
+    @Test
     @Ignore
     public void testEmail() throws InterruptedException{
         log.debug("Testing Email...");
