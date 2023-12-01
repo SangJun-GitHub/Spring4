@@ -14,7 +14,7 @@ public interface DocumentService {
     public List<Document> getAllDocuments();
     public Document findDocumentById(String id);
     public Document saveDocument(String id, Document document);
-    public Document removeDocument(String id);
+    public Document removeDocumentById(String id);
     public List<Document> findByType(Type type);
     public boolean updateLocationFromDocumentId(String documentId, String location);
 }
