@@ -32,6 +32,7 @@ public class MongoDocumentRepository implements DocumentDAO {
     @Override
     public Document save(String id, Document document) {
         Document _documentUpdate = findById(id);
+
         if(_documentUpdate == null){
             mongoTemplate.insert(_documentUpdate);
         } else{
