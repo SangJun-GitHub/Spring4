@@ -6,6 +6,7 @@ import com.apress.isf.spring.ch15.java.service.DocumentService;
 import com.apress.isf.spring.ch15.java.service.TypeService;
 import com.apress.isf.spring.ch15.spring.data.DocumentDAO;
 import com.apress.isf.spring.ch15.spring.data.TypeDAO;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -26,6 +27,9 @@ import static org.junit.Assert.*;
 @ContextConfiguration("classpath:META-INF/ch15/mydocument-context-ch15.xml")
 public class MyDocumentsTest {
     private static final Logger log = LoggerFactory.getLogger(MyDocumentsTest.class);
+    private static final String ID = "1acbb68a-a859-49c9-ac88-d9e9322bac55";
+    private static final String NAME = "Book Template";
+    private static final String NAME_UPDATED ="My Book";
 
     @Autowired
     DocumentDAO mongoDocumentDAO;
@@ -37,6 +41,7 @@ public class MyDocumentsTest {
     TypeService typeFacade;
 
     @Test
+    @Ignore
     public void testMongoDBMigration(){
         log.debug("Test Spring Data MongoDB - Migration (Run only once)...");
 
@@ -60,6 +65,40 @@ public class MyDocumentsTest {
         for (Document document: documents){
             mongoDocumentDAO.save(document.getDocumentId(), document);
         }
+    }
+
+    @Test
+    @Ignore
+    public void testMongoDBFind(){
+        log.debug("Testing Spring Data MongoDB... [ FIND ]");
+        assertNotNull(mongoDocumentDAO);
+        Document document = mongoDocumentDAO.findById(ID);
+        assertNotNull(document);
+        assertEquals(NAME, document.getName());
+        log.debug(document.toString());
+    }
+
+    @Test
+    @Ignore
+    public void testMongoDBUpdate(){
+        log.debug("Testing Spring Data MongoDB... [ UPDATE ]");
+        assertNotNull(mongoDocumentDAO);
+        Document document = new Document(ID, NAME_UPDATED);
+        assertNotNull(document);
+        Document updatedDocument = mongoDocumentDAO.save(ID, document);
+        assertNotNull(updatedDocument);
+        log.debug(updatedDocument.toString());
+    }
+
+    @Test
+    @Ignore
+    public void testMongoDBRemove(){
+        log.debug("Testing Spring Data MongoDB... [ REMOVE ]");
+        assertNotNull(mongoDocumentDAO);
+        Document document = mongoDocumentDAO.removeById(ID);
+        assertNotNull(document);
+        Document removedDocument = mongoDocumentDAO.findById(ID);
+        assertNull(removedDocument);
     }
 
 }
