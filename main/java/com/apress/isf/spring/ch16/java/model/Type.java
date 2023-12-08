@@ -63,6 +63,7 @@ public class Type {
         this.extension = extension;
     }
 
+    @Override
     public String toString(){
         StringBuilder builder = new StringBuilder("Type(");
         builder.append("id: ");
