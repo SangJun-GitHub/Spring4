@@ -1,4 +1,4 @@
-package com.apress.isf.spring.ch16.java.utils;
+package com.apress.isf.spring.ch17.java.utils;
 
 import com.thoughtworks.xstream.XStream;
 

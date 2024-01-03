@@ -1,4 +1,4 @@
-package com.apress.isf.spring.ch16.java.model;
+package com.apress.isf.spring.ch17.java.model;
 
 import org.springframework.data.annotation.Id;
 
