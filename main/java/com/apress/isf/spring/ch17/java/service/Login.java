@@ -1,4 +1,4 @@
-package com.apress.isf.spring.ch16.java.service;
+package com.apress.isf.spring.ch17.java.service;
 
 /**
  * Created by Sang Jun Park on 12/06/2023.
