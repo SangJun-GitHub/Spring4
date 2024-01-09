@@ -1,6 +1,6 @@
 package com.apress.isf.spring.ch17.java.service;
 
-import com.apress.isf.spring.ch16.java.model.Type;
+import com.apress.isf.spring.ch17.java.model.Type;
 
 import java.util.List;
 
